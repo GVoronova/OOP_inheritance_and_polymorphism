@@ -102,7 +102,11 @@ public:
 			if (C == 90) {
 				return true;
 			}
-		} else {
+			else {
+				return false;
+			}
+		}
+		else {
 			return false;
 		}
 	}
@@ -131,6 +135,9 @@ public:
 			if (a == c && A == C) {
 				return true;
 			}
+			else {
+				return false;
+			}
 		}
 		else {
 			return false;
@@ -157,6 +164,9 @@ public:
 		if (Triangle::check() == true) {
 			if (a == b && a == c && A == B && A == C) {
 				return true;
+			}
+			else {
+				return false;
 			}
 		}
 		else {
@@ -248,10 +258,14 @@ public:
 			if (a == c && b == d && (A == 90 && B == 90 && C == 90 && D == 90)) {
 				return true;
 			}
+			else {
+				return false;
+			}
 		}
 		else {
 			return false;
 		}
+
 	}
 };
 
@@ -275,9 +289,13 @@ public:
 			if (a == b && a == c && a == d) {
 				return true;
 			}
-		} else {
+			else {
 				return false;
-		} 
+			}
+		}
+		else {
+			return false;
+		}
 	}	
 };
 
@@ -308,10 +326,13 @@ public:
 			if (a == c && b == d && A == C && B == D) {
 				return true;
 			}
+			else {
+				return false;
+			}
 		}
 		else {
 			return false;
-		} 
+		}
 	}
 };
 
@@ -336,6 +357,9 @@ public:
 		if (Quadrangle::check() == true) {
 			if (a == b && a == c && a == d) {
 				return true;
+			} 
+			else {
+				return false;
 			}
 		}
 		else {
@@ -344,18 +368,10 @@ public:
 	}
 };
 
-void print_info(Figure* figure) {
-	Triangle tri;
-	RightTriangle rt;
-	IsoscelesTriangle it;
-	EquilateralTriangle et;
-	Quadrangle quadr;
-	Rectangle rect;
-	Square square;
-	Parallelogram paral;
-	Diamond diamond;
-
-	Figure figure_base;
+void print_info(Figure* figure, Triangle tri, RightTriangle rt, 
+	IsoscelesTriangle it, EquilateralTriangle et, Quadrangle quadr, Rectangle rect, Square square, Parallelogram paral, Diamond diamond, Figure figure_base) {
+	
+	
 	figure_base.check();
 	figure_base.print_info();
 
@@ -400,8 +416,19 @@ int main() {
 
 	setlocale(LC_ALL, "Russian");
 
+	Triangle tri;
+	RightTriangle rt;
+	IsoscelesTriangle it;
+	EquilateralTriangle et;
+	Quadrangle quadr;
+	Rectangle rect;
+	Square square;
+	Parallelogram paral;
+	Diamond diamond;
 	Figure figure;
-	print_info(&figure);
+	Figure figure_base;
+
+	print_info(&figure, tri, rt, it, et, quadr, rect, square, paral, diamond, figure_base);
 
 
 	return 0;
